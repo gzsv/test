@@ -17,11 +17,10 @@ services:
     build:
       context: ./db
     environment:
-      - POSTGRES_USER=userpg
-      - POSTGRES_PASSWORD=pwd1234
-      - POSTGRES_DB=test
-      - POSTGRES_HOST_AUTH_METHOD=md5
-      - PGDATA=/var/lib/postgresql/data/pgdata
+      - POSTGRES_USER=${POSTGRES_USER}
+      - POSTGRES_PASSWORD=${POSTGRES_PASSWORD}
+      - POSTGRES_HOST_AUTH_METHOD=${POSTGRES_HOST_AUTH_METHOD}
+      - PGDATA=${PGDATA}
     ports:
       - "5432:5432"
     volumes:
